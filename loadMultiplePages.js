@@ -30,6 +30,54 @@ jQuery(this.destTarget[this.index]).load(this.protocal + '//' + this.tld + this.
 [16, 32, 48 ]
 
 
+
+var content;
+$.get('rpc.php?o=' + id, function(data){
+    content= data;
+});
+// Do something with content:
+alert(content);
+
+
+
+
+$.get("logFile", function(response) {
+     var logfile = response;
+});
+
+var stuff;
+$.get('logFile', function (response) {
+    stuff = response;
+});
+
+
+
+// Assign handlers immediately after making the request,
+// and remember the jqxhr object for this request
+var jqxhr = $.get( "example.php", function() {
+  alert( "success" );
+})
+  .done(function() {
+    alert( "second success" );
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+    alert( "finished" );
+  });
+ 
+// Perform other work here ...
+ 
+// Set another completion function for the request above
+jqxhr.always(function() {
+  alert( "second finished" );
+});
+
+
+
+
+
 var urls = ['/url/one','/url/two', ....];
 
 $.each(urls, function(i,u){ 
