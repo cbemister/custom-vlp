@@ -118,7 +118,40 @@ customVLP.init();
 
 
 
+
+var paginationString = $(".pagination .ddc-pagination-current-page").parent().html().split(" ");
+
+var paginationLength = paginationString.length;
+
+var p = paginationString[paginationLength-1];
+
+console.log(p);
+
+
+var loadedImagesIndex = [];
+
+
+for (i = 0; i <= p; i++) {
+	
+	var n = 16 * i;
+	
+	var firstImage = 0 + n;
+	
+	var secondImage = 1 + n;
+	
+	var thirdImage = 2 + n;
+	
+	var forthImage = 3 + n;
+	
+	loadedImagesIndex.push(firstImage, secondImage, thirdImage, forthImage); 
+	
+}
+
+
+
   
+
+
 //$(".hproduct").each(function(){
 //
 //
