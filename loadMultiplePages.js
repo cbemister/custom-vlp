@@ -30,13 +30,34 @@ jQuery(this.destTarget[this.index]).load(this.protocal + '//' + this.tld + this.
 [16, 32, 48 ]
 
 
++ this.pagination
 
 var content;
-$.get('rpc.php?o=' + id, function(data){
+
+$.get(this.protocal + '//' + this.tld + this.vlp + this.searchParam + this.stockNumbersString, function(data){
     content= data;
 });
 // Do something with content:
-alert(content);
+console.log(content);
+
+https://www.mapleridgechrysler.com/all-inventory/index.htm?search=ZT758311+OR+ZC347004+OR+ZC105339+OR+ST101677+OR+ST183492+OR+ST193327+OR+PA815888+OR+PA727101+OR+PA727044+OR+PA727056
+
+
+var content;
+
+$.get('https://www.mapleridgechrysler.com/all-inventory/index.htm?search=ZT758311+OR+ZC347004+OR+ZC105339+OR+ST101677+OR+ST183492+OR+ST193327+OR+PA815888+OR+PA727101+OR+PA727044+OR+PA727056', function(data){
+    content= data;
+});
+// Do something with content:
+console.log(content);
+
+
+$.get(this.protocal + '//' + this.tld + this.vlp + this.searchParam + this.stockNumbersString, function(data){
+    
+    var targetDiv = $(data).find('.ddc-content.inventory-listing-default .bd').html();
+    
+  console.log("Data: " + targetDiv);
+});
 
 
 
